@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>015D6007-A062-42E5-8CB6-653D2A134631</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>293DABD75EC9CE4D1468093884A2082518E3FA79</key>
+		<string>https://github.com/jparishy/UIView-LENibLoading.git</string>
+	</dict>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>293DABD75EC9CE4D1468093884A2082518E3FA79</key>
+		<string>UIView-LENibLoading/</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/jparishy/UIView-LENibLoading.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>293DABD75EC9CE4D1468093884A2082518E3FA79</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>293DABD75EC9CE4D1468093884A2082518E3FA79</string>
+			<key>IDESourceControlWCCName</key>
+			<string>UIView-LENibLoading</string>
+		</dict>
+	</array>
+</dict>
+</plist>

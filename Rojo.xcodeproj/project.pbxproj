@@ -1,0 +1,632 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		24DC6FB851A45332E7082CD2 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 68A9CAE5546D116E3826E3BF /* libPods.a */; };
+		E845CED21A1962C70068002B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E845CED11A1962C70068002B /* main.m */; };
+		E845CED51A1962C70068002B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E845CED41A1962C70068002B /* AppDelegate.m */; };
+		E845CED81A1962C70068002B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E845CED71A1962C70068002B /* ViewController.m */; };
+		E845CEDB1A1962C70068002B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E845CED91A1962C70068002B /* Main.storyboard */; };
+		E845CEDD1A1962C70068002B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E845CEDC1A1962C70068002B /* Images.xcassets */; };
+		E845CEE01A1962C70068002B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E845CEDE1A1962C70068002B /* LaunchScreen.xib */; };
+		E845CEEC1A1962C70068002B /* RojoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E845CEEB1A1962C70068002B /* RojoTests.m */; };
+		E845CEF71A196CD70068002B /* JLESubredditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E845CEF61A196CD70068002B /* JLESubredditViewController.m */; };
+		E845CEFA1A196D210068002B /* JLESubredditThreadsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E845CEF91A196D210068002B /* JLESubredditThreadsListViewController.m */; };
+		E845CF011A196DC60068002B /* LENibLoadedView.m in Sources */ = {isa = PBXBuildFile; fileRef = E845CEFD1A196DC60068002B /* LENibLoadedView.m */; };
+		E845CF021A196DC60068002B /* Readme.md in Sources */ = {isa = PBXBuildFile; fileRef = E845CEFE1A196DC60068002B /* Readme.md */; };
+		E845CF031A196DC60068002B /* UIView+LENibLoading.m in Sources */ = {isa = PBXBuildFile; fileRef = E845CF001A196DC60068002B /* UIView+LENibLoading.m */; };
+		E845CF061A196DE60068002B /* UIView+LECommonLayoutConstraints.m in Sources */ = {isa = PBXBuildFile; fileRef = E845CF051A196DE60068002B /* UIView+LECommonLayoutConstraints.m */; };
+		E845CF0A1A1970240068002B /* JLESubreddit.m in Sources */ = {isa = PBXBuildFile; fileRef = E845CF091A1970240068002B /* JLESubreddit.m */; };
+		E845CF0D1A1972B80068002B /* JLERedditClient.m in Sources */ = {isa = PBXBuildFile; fileRef = E845CF0C1A1972B80068002B /* JLERedditClient.m */; };
+		E845CF111A1973380068002B /* JLERedditAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = E845CF101A1973380068002B /* JLERedditAPI.m */; };
+		E845CF141A19737A0068002B /* JLERedditUserAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = E845CF131A19737A0068002B /* JLERedditUserAPI.m */; };
+		E845CF171A1976750068002B /* JLEFrontpageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E845CF161A1976750068002B /* JLEFrontpageViewController.m */; };
+		E872D8831A1C1630009EAFDB /* JLESubredditListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E872D8821A1C1630009EAFDB /* JLESubredditListViewController.m */; };
+		E872D8881A1C16E4009EAFDB /* JLESubredditListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E872D8861A1C16E4009EAFDB /* JLESubredditListCell.m */; };
+		E872D8891A1C16E4009EAFDB /* JLESubredditListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E872D8871A1C16E4009EAFDB /* JLESubredditListCell.xib */; };
+		E872D88C1A1C170B009EAFDB /* UITableViewCell+JLEDefaultReuseIdentifier.m in Sources */ = {isa = PBXBuildFile; fileRef = E872D88B1A1C170B009EAFDB /* UITableViewCell+JLEDefaultReuseIdentifier.m */; };
+		E872D8931A1C1C74009EAFDB /* JLETheme.m in Sources */ = {isa = PBXBuildFile; fileRef = E872D8921A1C1C74009EAFDB /* JLETheme.m */; };
+		E872D8961A1C1F3B009EAFDB /* JLERojoNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = E872D8951A1C1F3B009EAFDB /* JLERojoNavigationBar.m */; };
+		E872D8991A1C2B7C009EAFDB /* JLEOAuth2RequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E872D8981A1C2B7C009EAFDB /* JLEOAuth2RequestOperationManager.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E845CEE61A1962C70068002B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E845CEC41A1962C60068002B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E845CECB1A1962C60068002B;
+			remoteInfo = Rojo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0341E35F42B158CC69B12637 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		38490621CB649C57811FF3B6 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		68A9CAE5546D116E3826E3BF /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E845CECC1A1962C60068002B /* Rojo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rojo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E845CED01A1962C70068002B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E845CED11A1962C70068002B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E845CED31A1962C70068002B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		E845CED41A1962C70068002B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E845CED61A1962C70068002B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		E845CED71A1962C70068002B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		E845CEDA1A1962C70068002B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E845CEDC1A1962C70068002B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		E845CEDF1A1962C70068002B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		E845CEE51A1962C70068002B /* RojoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RojoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E845CEEA1A1962C70068002B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E845CEEB1A1962C70068002B /* RojoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RojoTests.m; sourceTree = "<group>"; };
+		E845CEF51A196CD70068002B /* JLESubredditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLESubredditViewController.h; sourceTree = "<group>"; };
+		E845CEF61A196CD70068002B /* JLESubredditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLESubredditViewController.m; sourceTree = "<group>"; };
+		E845CEF81A196D210068002B /* JLESubredditThreadsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLESubredditThreadsListViewController.h; sourceTree = "<group>"; };
+		E845CEF91A196D210068002B /* JLESubredditThreadsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLESubredditThreadsListViewController.m; sourceTree = "<group>"; };
+		E845CEFC1A196DC60068002B /* LENibLoadedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LENibLoadedView.h; sourceTree = "<group>"; };
+		E845CEFD1A196DC60068002B /* LENibLoadedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LENibLoadedView.m; sourceTree = "<group>"; };
+		E845CEFE1A196DC60068002B /* Readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
+		E845CEFF1A196DC60068002B /* UIView+LENibLoading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+LENibLoading.h"; sourceTree = "<group>"; };
+		E845CF001A196DC60068002B /* UIView+LENibLoading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+LENibLoading.m"; sourceTree = "<group>"; };
+		E845CF041A196DE60068002B /* UIView+LECommonLayoutConstraints.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+LECommonLayoutConstraints.h"; sourceTree = "<group>"; };
+		E845CF051A196DE60068002B /* UIView+LECommonLayoutConstraints.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+LECommonLayoutConstraints.m"; sourceTree = "<group>"; };
+		E845CF081A1970240068002B /* JLESubreddit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLESubreddit.h; sourceTree = "<group>"; };
+		E845CF091A1970240068002B /* JLESubreddit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLESubreddit.m; sourceTree = "<group>"; };
+		E845CF0B1A1972B80068002B /* JLERedditClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLERedditClient.h; sourceTree = "<group>"; };
+		E845CF0C1A1972B80068002B /* JLERedditClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLERedditClient.m; sourceTree = "<group>"; };
+		E845CF0F1A1973380068002B /* JLERedditAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLERedditAPI.h; sourceTree = "<group>"; };
+		E845CF101A1973380068002B /* JLERedditAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLERedditAPI.m; sourceTree = "<group>"; };
+		E845CF121A19737A0068002B /* JLERedditUserAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLERedditUserAPI.h; sourceTree = "<group>"; };
+		E845CF131A19737A0068002B /* JLERedditUserAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLERedditUserAPI.m; sourceTree = "<group>"; };
+		E845CF151A1976750068002B /* JLEFrontpageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLEFrontpageViewController.h; sourceTree = "<group>"; };
+		E845CF161A1976750068002B /* JLEFrontpageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLEFrontpageViewController.m; sourceTree = "<group>"; };
+		E872D8811A1C1630009EAFDB /* JLESubredditListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLESubredditListViewController.h; sourceTree = "<group>"; };
+		E872D8821A1C1630009EAFDB /* JLESubredditListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLESubredditListViewController.m; sourceTree = "<group>"; };
+		E872D8851A1C16E4009EAFDB /* JLESubredditListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLESubredditListCell.h; sourceTree = "<group>"; };
+		E872D8861A1C16E4009EAFDB /* JLESubredditListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLESubredditListCell.m; sourceTree = "<group>"; };
+		E872D8871A1C16E4009EAFDB /* JLESubredditListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JLESubredditListCell.xib; sourceTree = "<group>"; };
+		E872D88A1A1C170B009EAFDB /* UITableViewCell+JLEDefaultReuseIdentifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+JLEDefaultReuseIdentifier.h"; sourceTree = "<group>"; };
+		E872D88B1A1C170B009EAFDB /* UITableViewCell+JLEDefaultReuseIdentifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+JLEDefaultReuseIdentifier.m"; sourceTree = "<group>"; };
+		E872D88D1A1C1771009EAFDB /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		E872D8911A1C1C74009EAFDB /* JLETheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLETheme.h; sourceTree = "<group>"; };
+		E872D8921A1C1C74009EAFDB /* JLETheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLETheme.m; sourceTree = "<group>"; };
+		E872D8941A1C1F3B009EAFDB /* JLERojoNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLERojoNavigationBar.h; sourceTree = "<group>"; };
+		E872D8951A1C1F3B009EAFDB /* JLERojoNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLERojoNavigationBar.m; sourceTree = "<group>"; };
+		E872D8971A1C2B7C009EAFDB /* JLEOAuth2RequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLEOAuth2RequestOperationManager.h; sourceTree = "<group>"; };
+		E872D8981A1C2B7C009EAFDB /* JLEOAuth2RequestOperationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLEOAuth2RequestOperationManager.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E845CEC91A1962C60068002B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24DC6FB851A45332E7082CD2 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E845CEE21A1962C70068002B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C21BFD62865C4BCE65996163 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				68A9CAE5546D116E3826E3BF /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D341A3176E5E0193A2B61BF9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				38490621CB649C57811FF3B6 /* Pods.debug.xcconfig */,
+				0341E35F42B158CC69B12637 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E845CEC31A1962C60068002B = {
+			isa = PBXGroup;
+			children = (
+				E845CECE1A1962C60068002B /* Rojo */,
+				E845CEE81A1962C70068002B /* RojoTests */,
+				E845CECD1A1962C60068002B /* Products */,
+				D341A3176E5E0193A2B61BF9 /* Pods */,
+				C21BFD62865C4BCE65996163 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		E845CECD1A1962C60068002B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E845CECC1A1962C60068002B /* Rojo.app */,
+				E845CEE51A1962C70068002B /* RojoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E845CECE1A1962C60068002B /* Rojo */ = {
+			isa = PBXGroup;
+			children = (
+				E845CED31A1962C70068002B /* AppDelegate.h */,
+				E845CED41A1962C70068002B /* AppDelegate.m */,
+				E845CED61A1962C70068002B /* ViewController.h */,
+				E845CED71A1962C70068002B /* ViewController.m */,
+				E845CED91A1962C70068002B /* Main.storyboard */,
+				E845CEDC1A1962C70068002B /* Images.xcassets */,
+				E845CEDE1A1962C70068002B /* LaunchScreen.xib */,
+				E845CECF1A1962C70068002B /* Supporting Files */,
+				E845CEF51A196CD70068002B /* JLESubredditViewController.h */,
+				E845CEF61A196CD70068002B /* JLESubredditViewController.m */,
+				E845CEF81A196D210068002B /* JLESubredditThreadsListViewController.h */,
+				E845CEF91A196D210068002B /* JLESubredditThreadsListViewController.m */,
+				E845CF151A1976750068002B /* JLEFrontpageViewController.h */,
+				E845CF161A1976750068002B /* JLEFrontpageViewController.m */,
+				E872D8811A1C1630009EAFDB /* JLESubredditListViewController.h */,
+				E872D8821A1C1630009EAFDB /* JLESubredditListViewController.m */,
+				E872D8841A1C16CE009EAFDB /* Views */,
+				E845CF071A19700D0068002B /* Models */,
+				E845CEFB1A196DC60068002B /* UIView-LENibLoading */,
+			);
+			path = Rojo;
+			sourceTree = "<group>";
+		};
+		E845CECF1A1962C70068002B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E845CED01A1962C70068002B /* Info.plist */,
+				E845CED11A1962C70068002B /* main.m */,
+				E872D88D1A1C1771009EAFDB /* PrefixHeader.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E845CEE81A1962C70068002B /* RojoTests */ = {
+			isa = PBXGroup;
+			children = (
+				E845CEEB1A1962C70068002B /* RojoTests.m */,
+				E845CEE91A1962C70068002B /* Supporting Files */,
+			);
+			path = RojoTests;
+			sourceTree = "<group>";
+		};
+		E845CEE91A1962C70068002B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E845CEEA1A1962C70068002B /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E845CEFB1A196DC60068002B /* UIView-LENibLoading */ = {
+			isa = PBXGroup;
+			children = (
+				E845CF041A196DE60068002B /* UIView+LECommonLayoutConstraints.h */,
+				E845CF051A196DE60068002B /* UIView+LECommonLayoutConstraints.m */,
+				E845CEFC1A196DC60068002B /* LENibLoadedView.h */,
+				E845CEFD1A196DC60068002B /* LENibLoadedView.m */,
+				E845CEFE1A196DC60068002B /* Readme.md */,
+				E845CEFF1A196DC60068002B /* UIView+LENibLoading.h */,
+				E845CF001A196DC60068002B /* UIView+LENibLoading.m */,
+			);
+			path = "UIView-LENibLoading";
+			sourceTree = "<group>";
+		};
+		E845CF071A19700D0068002B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E845CF081A1970240068002B /* JLESubreddit.h */,
+				E845CF091A1970240068002B /* JLESubreddit.m */,
+				E845CF0E1A1973100068002B /* API */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		E845CF0E1A1973100068002B /* API */ = {
+			isa = PBXGroup;
+			children = (
+				E845CF0B1A1972B80068002B /* JLERedditClient.h */,
+				E845CF0C1A1972B80068002B /* JLERedditClient.m */,
+				E845CF0F1A1973380068002B /* JLERedditAPI.h */,
+				E845CF101A1973380068002B /* JLERedditAPI.m */,
+				E845CF121A19737A0068002B /* JLERedditUserAPI.h */,
+				E845CF131A19737A0068002B /* JLERedditUserAPI.m */,
+				E872D8971A1C2B7C009EAFDB /* JLEOAuth2RequestOperationManager.h */,
+				E872D8981A1C2B7C009EAFDB /* JLEOAuth2RequestOperationManager.m */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
+		E872D8841A1C16CE009EAFDB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E872D8851A1C16E4009EAFDB /* JLESubredditListCell.h */,
+				E872D8861A1C16E4009EAFDB /* JLESubredditListCell.m */,
+				E872D8871A1C16E4009EAFDB /* JLESubredditListCell.xib */,
+				E872D88A1A1C170B009EAFDB /* UITableViewCell+JLEDefaultReuseIdentifier.h */,
+				E872D88B1A1C170B009EAFDB /* UITableViewCell+JLEDefaultReuseIdentifier.m */,
+				E872D8911A1C1C74009EAFDB /* JLETheme.h */,
+				E872D8921A1C1C74009EAFDB /* JLETheme.m */,
+				E872D8941A1C1F3B009EAFDB /* JLERojoNavigationBar.h */,
+				E872D8951A1C1F3B009EAFDB /* JLERojoNavigationBar.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E845CECB1A1962C60068002B /* Rojo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E845CEEF1A1962C70068002B /* Build configuration list for PBXNativeTarget "Rojo" */;
+			buildPhases = (
+				FC021BCFA7378ACC4D54B65F /* Check Pods Manifest.lock */,
+				E845CEC81A1962C60068002B /* Sources */,
+				E845CEC91A1962C60068002B /* Frameworks */,
+				E845CECA1A1962C60068002B /* Resources */,
+				5F420F937AE3E4414BBF9161 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Rojo;
+			productName = Rojo;
+			productReference = E845CECC1A1962C60068002B /* Rojo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E845CEE41A1962C70068002B /* RojoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E845CEF21A1962C70068002B /* Build configuration list for PBXNativeTarget "RojoTests" */;
+			buildPhases = (
+				E845CEE11A1962C70068002B /* Sources */,
+				E845CEE21A1962C70068002B /* Frameworks */,
+				E845CEE31A1962C70068002B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E845CEE71A1962C70068002B /* PBXTargetDependency */,
+			);
+			name = RojoTests;
+			productName = RojoTests;
+			productReference = E845CEE51A1962C70068002B /* RojoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E845CEC41A1962C60068002B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Julius Parishy";
+				TargetAttributes = {
+					E845CECB1A1962C60068002B = {
+						CreatedOnToolsVersion = 6.1;
+					};
+					E845CEE41A1962C70068002B = {
+						CreatedOnToolsVersion = 6.1;
+						TestTargetID = E845CECB1A1962C60068002B;
+					};
+				};
+			};
+			buildConfigurationList = E845CEC71A1962C60068002B /* Build configuration list for PBXProject "Rojo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E845CEC31A1962C60068002B;
+			productRefGroup = E845CECD1A1962C60068002B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E845CECB1A1962C60068002B /* Rojo */,
+				E845CEE41A1962C70068002B /* RojoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E845CECA1A1962C60068002B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E845CEDB1A1962C70068002B /* Main.storyboard in Resources */,
+				E845CEE01A1962C70068002B /* LaunchScreen.xib in Resources */,
+				E872D8891A1C16E4009EAFDB /* JLESubredditListCell.xib in Resources */,
+				E845CEDD1A1962C70068002B /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E845CEE31A1962C70068002B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5F420F937AE3E4414BBF9161 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FC021BCFA7378ACC4D54B65F /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E845CEC81A1962C60068002B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E872D88C1A1C170B009EAFDB /* UITableViewCell+JLEDefaultReuseIdentifier.m in Sources */,
+				E845CF021A196DC60068002B /* Readme.md in Sources */,
+				E845CF011A196DC60068002B /* LENibLoadedView.m in Sources */,
+				E845CF111A1973380068002B /* JLERedditAPI.m in Sources */,
+				E872D8831A1C1630009EAFDB /* JLESubredditListViewController.m in Sources */,
+				E845CF171A1976750068002B /* JLEFrontpageViewController.m in Sources */,
+				E845CED81A1962C70068002B /* ViewController.m in Sources */,
+				E872D8961A1C1F3B009EAFDB /* JLERojoNavigationBar.m in Sources */,
+				E872D8991A1C2B7C009EAFDB /* JLEOAuth2RequestOperationManager.m in Sources */,
+				E845CF061A196DE60068002B /* UIView+LECommonLayoutConstraints.m in Sources */,
+				E845CF0D1A1972B80068002B /* JLERedditClient.m in Sources */,
+				E872D8931A1C1C74009EAFDB /* JLETheme.m in Sources */,
+				E845CF0A1A1970240068002B /* JLESubreddit.m in Sources */,
+				E845CED51A1962C70068002B /* AppDelegate.m in Sources */,
+				E845CF031A196DC60068002B /* UIView+LENibLoading.m in Sources */,
+				E845CEFA1A196D210068002B /* JLESubredditThreadsListViewController.m in Sources */,
+				E845CED21A1962C70068002B /* main.m in Sources */,
+				E845CEF71A196CD70068002B /* JLESubredditViewController.m in Sources */,
+				E872D8881A1C16E4009EAFDB /* JLESubredditListCell.m in Sources */,
+				E845CF141A19737A0068002B /* JLERedditUserAPI.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E845CEE11A1962C70068002B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E845CEEC1A1962C70068002B /* RojoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E845CEE71A1962C70068002B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E845CECB1A1962C60068002B /* Rojo */;
+			targetProxy = E845CEE61A1962C70068002B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E845CED91A1962C70068002B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E845CEDA1A1962C70068002B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E845CEDE1A1962C70068002B /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E845CEDF1A1962C70068002B /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E845CEED1A1962C70068002B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		E845CEEE1A1962C70068002B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E845CEF01A1962C70068002B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 38490621CB649C57811FF3B6 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Rojo/PrefixHeader.pch";
+				INFOPLIST_FILE = Rojo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		E845CEF11A1962C70068002B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0341E35F42B158CC69B12637 /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Rojo/PrefixHeader.pch";
+				INFOPLIST_FILE = Rojo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		E845CEF31A1962C70068002B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = RojoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Rojo.app/Rojo";
+			};
+			name = Debug;
+		};
+		E845CEF41A1962C70068002B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = RojoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Rojo.app/Rojo";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E845CEC71A1962C60068002B /* Build configuration list for PBXProject "Rojo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E845CEED1A1962C70068002B /* Debug */,
+				E845CEEE1A1962C70068002B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E845CEEF1A1962C70068002B /* Build configuration list for PBXNativeTarget "Rojo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E845CEF01A1962C70068002B /* Debug */,
+				E845CEF11A1962C70068002B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E845CEF21A1962C70068002B /* Build configuration list for PBXNativeTarget "RojoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E845CEF31A1962C70068002B /* Debug */,
+				E845CEF41A1962C70068002B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E845CEC41A1962C60068002B /* Project object */;
+}
