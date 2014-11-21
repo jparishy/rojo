@@ -28,13 +28,16 @@ typedef void(^JLEOAuth2PresentViewControllerBlock)(UIViewController *viewControl
 
 @interface JLEOAuth2RequestOperationManager : AFHTTPRequestOperationManager
 
+@property (nonatomic, copy, readonly) NSString *name;
 @property (nonatomic, strong, readonly) JLEOAuth2Credentials *credentials;
 
 @property (nonatomic, copy) JLEOAuth2PresentViewControllerBlock presentViewController;
 
-- (instancetype)initWithBaseURL:(NSURL *)url authorizationParameters:(JLEOAuth2AuthorizationParameters *)authorizationParameters;
+- (instancetype)initWithBaseURL:(NSURL *)url name:(NSString *)name authorizationParameters:(JLEOAuth2AuthorizationParameters *)authorizationParameters;
 
 - (void)authorizeWithSuccess:(void(^)(JLEOAuth2Credentials *credentials))success failure:(void(^)(NSError *error))failure;
+
+- (BOOL)isAuthorized;
 
 @end
 

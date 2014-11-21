@@ -65,7 +65,7 @@
     
     [self.client authorizeWithSuccess:^(JLEOAuth2Credentials *credentials) {
         
-        NSLog(@"Credentials: %@", credentials);
+        NSLog(@"Authorized!");
         
     } failure:^(NSError *error) {
         

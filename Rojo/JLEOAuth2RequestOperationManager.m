@@ -179,24 +179,35 @@
 
 @implementation JLEOAuth2RequestOperationManager
 
-- (instancetype)initWithBaseURL:(NSURL *)url authorizationParameters:(JLEOAuth2AuthorizationParameters *)authorizationParameters
+- (instancetype)initWithBaseURL:(NSURL *)url name:(NSString *)name authorizationParameters:(JLEOAuth2AuthorizationParameters *)authorizationParameters
 {
-    NSParameterAssert(authorizationParameters);
+    NSCParameterAssert(name);
+    NSCParameterAssert(authorizationParameters);
     
     if((self = [super initWithBaseURL:url]))
     {
+        _name = name;
         _authorizationParameters = authorizationParameters;
+        
+        _credentials = [self loadPersistedCredentials];
     }
     
     return self;
 }
 
+#pragma mark - Public API
+
 - (void)authorizeWithSuccess:(void (^)(JLEOAuth2Credentials *))success failure:(void (^)(NSError *))failure
 {
     NSCParameterAssert(success);
     NSCParameterAssert(failure);
-    
     NSCAssert(self.presentViewController, @"Must set presentViewController block.");
+    
+    if([self isAuthorized])
+    {
+        success(self.credentials);
+        return;
+    }
     
     NSURL *url = [self.authorizationParameters userAuthorizationURL];
     JLEOAuth2WebViewController *viewController = [[JLEOAuth2WebViewController alloc] initWithURL:url];
@@ -207,15 +218,25 @@
         
         @strongify(self);
         @strongify(viewController);
+        
         NSLog(@"Got code: %@", code);
         
-        [viewController dismissViewControllerAnimated:YES completion:nil];
-        
         [self requestAccessTokenWithCode:code success:^(JLEOAuth2Credentials *credentials) {
+            
+            @strongify(self);
+            @strongify(viewController);
+            
+            [viewController dismissViewControllerAnimated:YES completion:nil];
+            
+            [self setCredentials:credentials];
             
             success(credentials);
             
         } failure:^(NSError *error) {
+        
+            @strongify(viewController);
+            
+            [viewController dismissViewControllerAnimated:YES completion:nil];
             
             failure(error);
         }];
@@ -224,6 +245,13 @@
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
     self.presentViewController(navigationController);
 }
+
+- (BOOL)isAuthorized
+{
+    return (self.credentials != nil);
+}
+
+#pragma mark - Authorization flow
 
 - (void)requestAccessTokenWithCode:(NSString *)code success:(void (^)(JLEOAuth2Credentials *))success failure:(void (^)(NSError *))failure
 {
@@ -257,6 +285,52 @@
         
         failure(error);
     }];
+}
+
+#pragma mark - User credentials
+
+- (void)setCredentials:(JLEOAuth2Credentials *)credentials
+{
+    if(_credentials != credentials)
+    {
+        _credentials = credentials;
+        [self persistCredentials:credentials];
+    }
+}
+
+- (NSString *)pathForPersistedCredentials
+{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    
+    NSString *path = paths.firstObject;
+    if(path)
+    {
+        NSString *filename = [NSString stringWithFormat:@"com.rojo.JLEOAuth2AuthorizationParameters.%@.credentials", self.name];
+        return [path stringByAppendingPathComponent:filename];
+    }
+    
+    return nil;
+}
+
+- (JLEOAuth2Credentials *)loadPersistedCredentials
+{
+    NSString *path = [self pathForPersistedCredentials];
+    
+    NSData *data = [NSData dataWithContentsOfFile:path];
+    if(data == nil)
+    {
+        return nil;
+    }
+    
+    return [NSKeyedUnarchiver unarchiveObjectWithData:data];
+}
+
+- (void)persistCredentials:(JLEOAuth2Credentials *)loggedInUserCredentials
+{
+    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:loggedInUserCredentials];
+    
+    NSString *path = [self pathForPersistedCredentials];
+    [data writeToFile:path atomically:YES];
 }
 
 @end

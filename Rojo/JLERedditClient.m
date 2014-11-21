@@ -35,7 +35,13 @@
     NSString *accessTokenPath = @"https://ssl.reddit.com/api/v1/access_token";
     authorizationParameters.accessTokenURL = [NSURL URLWithString:accessTokenPath];
     
-    return [super initWithBaseURL:baseURL authorizationParameters:authorizationParameters];
+    NSString *name = @"reddit";
+    
+    if((self = [super initWithBaseURL:baseURL name:name authorizationParameters:authorizationParameters]))
+    {
+    }
+    
+    return self;
 }
 
 @end
