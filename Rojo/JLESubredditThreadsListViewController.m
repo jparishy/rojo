@@ -8,10 +8,20 @@
 
 #import "JLESubredditThreadsListViewController.h"
 
+#import "JLESubreddit.h"
+#import "JLEThread.h"
+
+#import "JLEThreadListCell.h"
+
+#import "JLEPagingTableController.h"
+
+#import "UITableViewCell+JLEDefaultReuseIdentifier.h"
 #import "UIView+LECommonLayoutConstraints.h"
 
-@interface JLESubredditThreadsListViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface JLESubredditThreadsListViewController () <UITableViewDelegate,
+                                                     JLEPagingTableControllerDelegate>
 
+@property (nonatomic, strong) JLEPagingTableController *tableController;
 @property (nonatomic, strong) UITableView *tableView;
 
 @end
@@ -25,6 +35,13 @@
     [self initializeTableView];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [self refreshThreads];
+}
+
 - (void)initializeTableView
 {
     self.tableView = [[UITableView alloc] init];
@@ -35,21 +52,43 @@
     [self.view le_addContraintsForFilledView:self.tableView insets:UIEdgeInsetsZero];
     
     self.tableView.delegate = self;
-    self.tableView.dataSource = self;
+    
+    self.tableController = [[JLEPagingTableController alloc] initWithTableView:self.tableView delegate:self];
+    
+    [JLEThreadListCell jle_registerNibInTableView:self.tableView];
 }
 
 #pragma mark - UITableViewDelegate
 
-#pragma mark - UITableViewDataSource
+#pragma mark - Networking
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+- (void)refreshThreads
 {
-    return 0;
+    @weakify(self);
+    [self.api requestThreadsWithSuccess:^(NSArray *threads) {
+        
+        @strongify(self);
+        self.tableController.models = threads;
+        
+        NSLog(@"%@", [threads bk_map:^id(JLEThread *thread) { return thread.title; } ]);
+        
+    } failure:^(NSError *error) {
+        
+        NSLog(@"%@", error);
+    }];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+#pragma mark - JLEPagingTableControllerDelegate
+
+- (UITableViewCell *)configuredCellForModel:(JLEThread *)model atIndexPath:(NSIndexPath *)indexPath
 {
-    return nil;
+    NSString *identifier = [JLEThreadListCell jle_defaultReuseIdentifier];
+    JLEThreadListCell *cell = (JLEThreadListCell *)[self.tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
+    
+    cell.theme = self.theme;
+    cell.thread = model;
+    
+    return cell;
 }
 
 @end

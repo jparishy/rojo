@@ -10,18 +10,19 @@
 
 @interface JLESubreddit : MTLModel<MTLJSONSerializing>
 
-@property (nonatomic, copy) NSString *identifier;
+@property (nonatomic, copy, readonly) NSString *identifier;
 
-@property (nonatomic, copy) NSString *title;
-@property (nonatomic, copy) NSString *displayName;
+@property (nonatomic, copy, readonly) NSString *title;
+@property (nonatomic, copy, readonly) NSString *displayName;
 
-@property (nonatomic, strong) NSURL *headerImageURL;
-@property (nonatomic, copy) NSString *headerTitle;
+@property (nonatomic, strong, readonly) NSURL *headerImageURL;
+@property (nonatomic, copy, readonly) NSString *headerTitle;
 
-@property (nonatomic, copy) NSString *descriptionMarkdown;
+@property (nonatomic, copy, readonly) NSString *descriptionMarkdown;
 
-@property (nonatomic, assign) NSInteger numberOfSubscribers;
+@property (nonatomic, assign, readonly) NSInteger numberOfSubscribers;
 
 - (NSString *)name;
+- (NSString *)APIPath;
 
 @end

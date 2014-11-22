@@ -6,42 +6,14 @@
 //  Copyright (c) 2014 Julius Parishy. All rights reserved.
 //
 
-#import "JLERedditUserAPI.h"
+#import "JLEUserAPI.h"
 
 #import "JLESubreddit.h"
 
 #import <BlocksKit/BlocksKit.h>
 #import <EXTScope.h>
 
-@implementation JLERedditUserAPI
-
-- (NSArray *)transformSubredditJSONDictionaries:(NSArray *)JSONDictionaries error:(NSError **)error
-{
-    NSMutableArray *subreddits = [[NSMutableArray alloc] init];
-    
-    NSError *deserializationError = nil;
-    
-    for(NSDictionary *JSONDictionary in JSONDictionaries)
-    {
-        Class klass = [JLESubreddit class];
-        JLESubreddit *subreddit = [MTLJSONAdapter modelOfClass:klass fromJSONDictionary:JSONDictionary error:&deserializationError];
-        
-        if(subreddit == nil)
-        {
-            break;
-        }
-        
-        [subreddits addObject:subreddit];
-    }
-    
-    if(deserializationError != nil && error != NULL)
-    {
-        *error = deserializationError;
-        return nil;
-    }
-    
-    return [subreddits copy];
-}
+@implementation JLEUserAPI
 
 - (AFHTTPRequestOperation *)listSubredditsWithSuccess:(void (^)(NSArray *))success failure:(void (^)(NSError *))failure
 {
@@ -66,7 +38,7 @@
             }];
             
             NSError *error = nil;
-            NSArray *subreddits = [self transformSubredditJSONDictionaries:subredditJSONDictionaries error:&error];
+            NSArray *subreddits = [self transformObjectJSONDictionaries:subredditJSONDictionaries class:[JLESubreddit class] error:&error];
             
             dispatch_async(dispatch_get_main_queue(), ^{
                 

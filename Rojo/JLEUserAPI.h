@@ -8,7 +8,7 @@
 
 #import "JLERedditAPI.h"
 
-@interface JLERedditUserAPI : JLERedditAPI
+@interface JLEUserAPI : JLERedditAPI
 
 - (AFHTTPRequestOperation *)listSubredditsWithSuccess:(void(^)(NSArray *subreddits))success failure:(void(^)(NSError *error))failure;
 

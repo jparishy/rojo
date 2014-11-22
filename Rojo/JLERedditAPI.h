@@ -16,4 +16,6 @@
 
 - (instancetype)initWithClient:(JLERedditClient *)client;
 
+- (NSArray *)transformObjectJSONDictionaries:(NSArray *)JSONDictionaries class:(Class)klass error:(NSError **)error;
+
 @end

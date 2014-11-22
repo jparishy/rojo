@@ -33,4 +33,9 @@
     return [NSString stringWithFormat:@"r/%@", self.displayName];
 }
 
+- (NSString *)APIPath
+{
+    return [NSString stringWithFormat:@"r/%@", self.displayName];
+}
+
 @end

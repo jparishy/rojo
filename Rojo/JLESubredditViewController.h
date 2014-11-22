@@ -9,9 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @class JLESubreddit;
+@class JLERedditClient;
 
 @interface JLESubredditViewController : UIViewController
 
+@property (nonatomic, weak) JLETheme *theme;
+@property (nonatomic, strong) JLERedditClient *client;
 @property (nonatomic, strong) JLESubreddit *subreddit;
 
 @end

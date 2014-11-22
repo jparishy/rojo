@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+#import "JLESubredditAPI.h"
+
 @interface JLESubredditThreadsListViewController : UIViewController
+
+@property (nonatomic, weak) JLETheme *theme;
+@property (nonatomic, strong) JLESubredditAPI *api;
 
 @end

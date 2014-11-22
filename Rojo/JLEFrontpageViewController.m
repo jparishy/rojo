@@ -9,7 +9,7 @@
 #import "JLEFrontpageViewController.h"
 
 #import "JLERedditClient.h"
-#import "JLERedditUserAPI.h"
+#import "JLEUserAPI.h"
 
 #import "JLESubreddit.h"
 
@@ -21,7 +21,7 @@
 @interface JLEFrontpageViewController () <JLESubredditListViewControllerDelegate>
 
 @property (nonatomic, strong) JLERedditClient *client;
-@property (nonatomic, strong) JLERedditUserAPI *userAPI;
+@property (nonatomic, strong) JLEUserAPI *userAPI;
 
 @property (nonatomic, strong) JLETheme *currentTheme;
 
@@ -44,7 +44,7 @@
         [self.navigationController presentViewController:viewController animated:YES completion:nil];
     };
     
-    self.userAPI = [[JLERedditUserAPI alloc] initWithClient:self.client];
+    self.userAPI = [[JLEUserAPI alloc] initWithClient:self.client];
     
     self.currentTheme = [[JLETheme alloc] init];
 }
@@ -119,6 +119,8 @@
 - (void)presentSubredditViewControllerForSubreddit:(JLESubreddit *)subreddit
 {
     JLESubredditViewController *viewController = [[JLESubredditViewController alloc] init];
+    viewController.theme = self.currentTheme;
+    viewController.client = self.client;
     viewController.subreddit = subreddit;
     
     [self.navigationController pushViewController:viewController animated:YES];
