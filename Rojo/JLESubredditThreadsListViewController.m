@@ -60,6 +60,12 @@
 
 #pragma mark - UITableViewDelegate
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    JLEThread *thread = [self.tableController modelForIndexPath:indexPath];
+    [self.delegate subredditThreadsListViewController:self didSelectThread:thread];
+}
+
 #pragma mark - Networking
 
 - (void)refreshThreads
@@ -69,8 +75,6 @@
         
         @strongify(self);
         self.tableController.models = threads;
-        
-        NSLog(@"%@", [threads bk_map:^id(JLEThread *thread) { return thread.title; } ]);
         
     } failure:^(NSError *error) {
         

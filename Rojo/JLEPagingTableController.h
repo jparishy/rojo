@@ -19,6 +19,8 @@
 
 - (instancetype)initWithTableView:(UITableView *)tableView delegate:(id<JLEPagingTableControllerDelegate>)delegate;
 
+- (id)modelForIndexPath:(NSIndexPath *)indexPath;
+
 - (void)appendModels:(NSArray *)models;
 - (void)prependModels:(NSArray *)models;
 

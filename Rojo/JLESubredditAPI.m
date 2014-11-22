@@ -39,11 +39,7 @@
             
             NSDictionary *response = responseObject;
             NSDictionary *data = response[@"data"];
-            
-            NSArray *threadsJSONDictionaries = [data[@"children"] bk_map:^id(NSDictionary *containerDictionary) {
-                
-                return containerDictionary[@"data"];
-            }];
+            NSArray *threadsJSONDictionaries = data[@"children"];
             
             NSError *error = nil;
             NSArray *threads = [self transformObjectJSONDictionaries:threadsJSONDictionaries class:[JLEThread class] error:&error];
@@ -91,11 +87,7 @@
             
             NSDictionary *response = responseObject;
             NSDictionary *data = response[@"data"];
-            
-            NSArray *threadsJSONDictionaries = [data[@"children"] bk_map:^id(NSDictionary *containerDictionary) {
-                
-                return containerDictionary[@"data"];
-            }];
+            NSArray *threadsJSONDictionaries = data[@"children"];
             
             NSError *error = nil;
             NSArray *threads = [self transformObjectJSONDictionaries:threadsJSONDictionaries class:[JLEThread class] error:&error];

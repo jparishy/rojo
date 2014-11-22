@@ -31,11 +31,7 @@
             
             NSDictionary *response = responseObject;
             NSDictionary *data = response[@"data"];
-            
-            NSArray *subredditJSONDictionaries = [data[@"children"] bk_map:^id(NSDictionary *containerDictionary) {
-                
-                return containerDictionary[@"data"];
-            }];
+            NSArray *subredditJSONDictionaries = data[@"children"];
             
             NSError *error = nil;
             NSArray *subreddits = [self transformObjectJSONDictionaries:subredditJSONDictionaries class:[JLESubreddit class] error:&error];

@@ -10,9 +10,19 @@
 
 #import "JLESubredditAPI.h"
 
+@protocol JLESubredditThreadsListViewControllerDelegate;
+
 @interface JLESubredditThreadsListViewController : UIViewController
 
 @property (nonatomic, weak) JLETheme *theme;
 @property (nonatomic, strong) JLESubredditAPI *api;
+@property (nonatomic, unsafe_unretained) id<JLESubredditThreadsListViewControllerDelegate> delegate;
+
+@end
+
+@protocol JLESubredditThreadsListViewControllerDelegate <NSObject>
+
+@required
+- (void)subredditThreadsListViewController:(JLESubredditThreadsListViewController *)viewController didSelectThread:(JLEThread *)thread;
 
 @end

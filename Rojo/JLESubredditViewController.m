@@ -15,10 +15,11 @@
 #import "JLEThread.h"
 
 #import "JLESubredditThreadsListViewController.h"
+#import "JLEThreadViewController.h"
 
 #import "UIView+LECommonLayoutConstraints.h"
 
-@interface JLESubredditViewController ()
+@interface JLESubredditViewController () <JLESubredditThreadsListViewControllerDelegate>
 
 @property (nonatomic, strong) JLESubredditAPI *api;
 
@@ -46,6 +47,8 @@
     self.threadsListViewController.theme = self.theme;
     self.threadsListViewController.api = self.api;
     
+    self.threadsListViewController.delegate = self;
+    
     [self addChildViewController:self.threadsListViewController];
     
     UIView *view = self.threadsListViewController.view;
@@ -61,6 +64,23 @@
     
     self.api = [[JLESubredditAPI alloc] initWithClient:self.client subreddit:subreddit];
     self.title = [subreddit name];
+}
+
+- (void)presentThreadViewControllerForThread:(JLEThread *)thread
+{
+    JLEThreadViewController *viewController = [[JLEThreadViewController alloc] init];
+    viewController.theme = self.theme;
+    viewController.client = self.client;
+    viewController.thread = thread;
+    
+    [self.navigationController pushViewController:viewController animated:YES];
+}
+
+#pragma mark - JLESubredditThreadsListViewControllerDelegate
+
+- (void)subredditThreadsListViewController:(JLESubredditThreadsListViewController *)viewController didSelectThread:(JLEThread *)thread
+{
+    [self presentThreadViewControllerForThread:thread];
 }
 
 @end

@@ -14,17 +14,17 @@
 {
     return @{
     
-        @"identifier" : @"id",
+        @"identifier" : @"data.id",
 
-        @"title" : @"title",
-        @"displayName" : @"display_name",
+        @"title" : @"data.title",
+        @"displayName" : @"data.display_name",
 
-        @"headerImageURL" : @"header_img",
-        @"headerTitle" : @"header_title",
+        @"headerImageURL" : @"data.header_img",
+        @"headerTitle" : @"data.header_title",
 
-        @"descriptionMarkdown" : @"description",
+        @"descriptionMarkdown" : @"data.description",
 
-        @"numberOfSubscribers" : @"subscribers"
+        @"numberOfSubscribers" : @"data.subscribers"
     };
 }
 

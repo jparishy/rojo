@@ -23,4 +23,8 @@
 @property (nonatomic, assign, readonly) NSInteger numberOfUpvotes;
 @property (nonatomic, assign, readonly) NSInteger numberOfDownvotes;
 
+@property (nonatomic, copy, readonly) NSString *permalink;
+
+- (NSString *)APIPath;
+
 @end

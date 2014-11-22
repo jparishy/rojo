@@ -46,6 +46,20 @@
     return [indexPaths copy];
 }
 
+- (id)modelForIndexPath:(NSIndexPath *)indexPath
+{
+    NSInteger index = indexPath.row;
+    if(index < 0 || index >= self.models.count)
+    {
+#if DEBUG
+        NSLog(@"WARNING: indexPath out of bounds: %s:%d", __FILE__, __LINE__);
+#endif
+        return nil;
+    }
+    
+    return self.models[index];
+}
+
 - (void)appendModels:(NSArray *)models
 {
     NSInteger startIndex = self.models.count;
@@ -79,10 +93,9 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSInteger index = indexPath.row;
-    id model = self.models[index];
-    
+    id model = [self modelForIndexPath:indexPath];
     UITableViewCell *cell = [self.delegate configuredCellForModel:model atIndexPath:indexPath];
+    
     return cell;
 }
 
